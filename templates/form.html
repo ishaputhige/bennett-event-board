@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Post Invites</title>
+</head>
+<body>
+<h1>Bennett Event Board - Post New Event</h1>
+<form method="POST" action="{{ url_for('form') }}">
+    {{ form.csrf_token }}
+
+    {{ form.nameClub.label }}
+    {{ form.nameClub }}
+    <br><br>
+    {{ form.nameEvent.label }}
+    {{ form.nameEvent }}
+    <br><br>
+    {{ form.nameHall.label }}
+    {{ form.nameHall }}
+    <br><br>
+    {{ form.eventDate.label }}
+    {{ form.eventDate }}
+    <br><br>
+    {{ form.eventTime.label }}
+    {{ form.eventTime }}
+    <br><br>
+    {{ form.eventDetails.label }}
+    {{ form.eventDetails }}
+    <br><br>
+
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

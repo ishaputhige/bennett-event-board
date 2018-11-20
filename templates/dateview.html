@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>Post Invites</title>
+</head>
+<body>
+<h1>Bennett Event Board - Select date</h1>
+<form method="POST" action="{{ url_for('dateview') }}">
+    {{ form.csrf_token }}
+
+    <div class = "container">
+      <p><h2>Choose date</h2>
+    {{ form.pickdate.label }}
+    {{ form.pickdate }}
+    </div>
+
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

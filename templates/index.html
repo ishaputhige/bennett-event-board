@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>BU Events Portal</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+  </head>
+
+  <body bgcolor=black>
+    <div class="jumbotron">
+    <h1>BU Events Portal</h1>
+    </div>
+
+    <div class="container">
+      <a href="{{ url_for('form') }}" class="btn btn-info" role="button">Post a new event</a>
+      <a href="{{ url_for('dateview') }}" class="btn btn-primary" role="button">View events</a>
+
+
+
+  </body>
+</html>

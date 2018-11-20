@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>BU Events Portal</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+  </head>
+
+  <body>
+<div class="container">
+{% if eventdata is string %}
+<h2>There are no events on this date.<br>
+  <a href={{ url_for('dateview') }} class="btn btn-info" role="button">Try another date</a>
+
+{% else %}
+
+{% for event in eventdata %}
+
+<p>
+Club: {{ event.to_dict().get('Club') }} <br>
+What: {{ event.to_dict().get('Event') }} <br>
+When: {{ event.to_dict().get('Date') }}, at {{ event.to_dict().get('Time') }} <br>
+Where: {{ event.to_dict().get('Venue') }} <br>
+Details: {{ event.to_dict().get('Details') }} <br>
+</p>
+
+</div>
+<div class="container">
+  
+  <button type="button" class="btn" href="{{ url_for('index') }}">HOME</button>
+
+{% endfor %}
+
+{% endif %}
+
+  </body>
+  </html>
